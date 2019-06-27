@@ -94,3 +94,23 @@ ExecStopPost=-/sbin/iw dev %i set type managed
 ```
 Reboot.
 That's it.
+
+### WPA2 with AES
+The previous configure will let the AP works as WPA-PSK mode, to swith to WPA2-PSK & AES encryption:
+```
+country=CA
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="Mountain-2g"
+    psk="<The_shared_key_for_this_AP>"
+    mode=2
+    proto=RSN
+    key_mgmt=WPA-PSK
+    pairwise=CCMP
+    group=CCMP
+    auth_alg=OPEN
+}
+
+```
