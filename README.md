@@ -112,5 +112,9 @@ network={
     group=CCMP
     auth_alg=OPEN
 }
-
+```
+### Control the wlan0 TX power
+The default TX power is 20 dBm, lower down the TX power if you just need an AP in a small room.
+```
+/sbin/iwconfig wlan0 txpower 0
 ```
